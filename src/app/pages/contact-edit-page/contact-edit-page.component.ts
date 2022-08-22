@@ -5,6 +5,7 @@ import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgForm } from '@angular/forms';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'contact-edit-page',
@@ -22,21 +23,22 @@ export class ContactEditPageComponent implements OnInit {
   ) { }
 
   contact!: Contact
-
-  // form = this.fb.group({
-  //   name: '',
-  //   phone: '',
-  //   email: ''
-  // })
+  title:string = ''
+  top:string = '0px';
 
   ngOnInit(): void {
     this.route.data.subscribe(({ contact }) => {
+      this.title =  (contact) ? 'Edit' : 'Add'
       this.contact = contact || this.contactService.getEmptyContact() as Contact
-      // this.startName = this.contact.name
-      // this.startPhone = this.contact.phone
-      // this.startEmail = this.contact.email
     })
   }
+
+  @HostListener("window:scroll", []) 
+  onWindowScroll() {
+    // do some stuff here when the window is scrolled
+    const verticalOffset = window.scrollY
+    this.top = verticalOffset+'px'          
+}
 
   onCancel(event:MouseEvent){
     event.stopPropagation()

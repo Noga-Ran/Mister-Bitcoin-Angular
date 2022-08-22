@@ -1,9 +1,15 @@
 <section *ngIf="contact" class="contact-details app-regular-padding">
-    <section>
-        <p>Name: {{contact.name}}</p>
-        <p>Email: {{contact.email}}</p>
-        <p>Phone: {{contact.phone}}</p>
-        <img src="https://robohash.org/{{contact._id}}?set=set1" alt="">
+    <section class="details">
+        <img src="assets/icons/contact.png" alt="">
+        <section>
+            <p><span>Name:</span> {{contact.name}}</p>
+            <p><span>Email:</span> {{contact.email}}</p>
+            <p><span>Phone:</span> {{contact.phone}}</p>
+        </section>
+        <section class="actions">
+            <button class="button-87" (click)="onGoBack()">Back</button>
+            <button class="button-87" (click)="onEdit()">Edit</button>
+            <button class="button-87" (click)="removeContact()">Delete</button>
+        </section>
     </section>
-    <button (click)="onGoBack()">Back</button>
 </section>

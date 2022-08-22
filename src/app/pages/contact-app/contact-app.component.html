@@ -3,8 +3,6 @@
 
     <ng-template #ContactList>
         <contact-filter></contact-filter>
-
-        <button (click)="onAdd()">Add Contact</button>
         <contact-list (onSelect)="onSelectContactId($event)" (onRemove)="onRemoveContact($event)" [contacts]="contacts$ | async"></contact-list>
     </ng-template>
 </section>

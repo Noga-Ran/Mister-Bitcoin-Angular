@@ -59,15 +59,24 @@ input {
     text-align: inherit;
 }
 
-.container {
-    padding-inline: 10vw;
-}
+// .container {
+//     padding-inline: 10vw;
+// }
 
 .app-regular-padding{
-    margin: auto 80px;
+    margin: auto 10vw;
 }
 
 a.active {
-    color: #151515;
+    color: black !important;
     font-weight: 500;
 }
+
+@media (max-width: 800px) {
+    a.active {
+        color: #f2a900 !important;
+        font-weight: 500;
+    }
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

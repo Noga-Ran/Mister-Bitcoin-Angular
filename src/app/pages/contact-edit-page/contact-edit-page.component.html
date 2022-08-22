@@ -1,34 +1,24 @@
-<!-- <section *ngIf="contact" class="contact-edit">
-    <h2>{{contact._id ? 'Edit':'Add'}} Contact</h2>
-    <form (ngSubmit)="onSaveContact()">
-        <label for="name">Name</label>
-        <input [(ngModel)]="contact.name" type="text" name="name" id="name">
+<section class="wrapper" [style.top]="top">
+    <form *ngIf="contact" class="contact-edit" #form="ngForm" (ngSubmit)="onSaveContact(form)">
+    
+        <h1>{{title}}</h1>
+    
+        <div class="inputs">
+            <span>
+                <input name="name"  [(ngModel)]="contact.name" placeholder="First name" type="text" required/>
+            </span>
+            <span>                
+                <input name="email" [(ngModel)]="contact.email" placeholder="Your Email" type="email" required/>
+            </span>
+            <span>
+                <input name="phone" [(ngModel)]="contact.phone" placeholder="Your Phone Number" type="tel" required/>
+            </span>
+        </div>
 
-        <label for="phone">Phone</label>
-        <small>Format: +1 (807) 551-3258</small>
-        <input [(ngModel)]="contact.phone" type="tel" name="phone" id="phone" pattern="[0-9]{1}-([0-9]){3}-[0-9]{3}-[0-9]{3}" required>
-
-        <label for="email">Email</label>
-        <input [ngModel]="contact.email" type="text" name="email" id="email">
-
-        <button>Save</button>
+        <div class="btns">
+            <button class="button-87" [disabled]="form.invalid" md-button color="primary" type="submit">SUBMIT</button>
+            <button class="button-87" md-button color="primary" (click)="onCancel($event)">CANCEL</button>
+        </div>
+    
     </form>
-</section> -->
-
-
-<form *ngIf="contact" class="contact-edit" #form="ngForm" (ngSubmit)="onSaveContact(form)">
-    <pre>
-        {{form.value | json}}
-    </pre>
-    <div class="flex mb-2">
-        <input name="name"  [(ngModel)]="contact.name" placeholder="First name" type="text" required/>
-        <input name="email" [(ngModel)]="contact.email" placeholder="Your Email" type="email" required/>
-        <input name="phone" [(ngModel)]="contact.phone" placeholder="Your Phone Number" type="tel" required/>
-    </div>
-    <br /> <br />
-    <div align="end">
-        <button [disabled]="form.invalid" md-button color="primary" type="submit">SUBMIT</button>
-        <button md-button color="primary" (click)="onCancel($event)">CANCEL</button>
-    </div>
-
-</form>
+</section>

@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
-import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -14,8 +13,6 @@ export class ContactAppComponent implements OnInit, OnDestroy {
 
     constructor(
         private contactService: ContactService,
-        private route: ActivatedRoute,
-        private router: Router
     ) { }
 
     contacts!: Contact[]
@@ -37,10 +34,6 @@ export class ContactAppComponent implements OnInit, OnDestroy {
 
     onSelectContactId(contactId: string) {
         this.selectedContactId = contactId
-    }
-
-    onAdd() {
-        this.router.navigateByUrl(`/contacts/edit`)
     }
 
     ngOnDestroy(): void {
