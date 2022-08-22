@@ -29,7 +29,7 @@ export class ContactEditPageComponent implements OnInit {
   ngOnInit(): void {
     this.route.data.subscribe(({ contact }) => {
       this.title =  (contact) ? 'Edit' : 'Add'
-      this.contact = contact || this.contactService.getEmptyContact() as Contact
+      this.contact = JSON.parse(JSON.stringify(contact)) || this.contactService.getEmptyContact() as Contact
     })
   }
 
