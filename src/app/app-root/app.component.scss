@@ -1,0 +1,22 @@
+.main-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    .space{
+        margin-bottom: 100px;;
+    }
+    main {
+        flex-grow: 1;
+    }
+
+    .btn-choices {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    .chosen-cmp {
+        background-color: #f2a900;
+    }
+}

@@ -1,0 +1,19 @@
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    background-color: #f2a900;
+    color: whitesmoke;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+
+    .logo {
+        display: flex;
+        align-items: center;
+
+        img{
+            width: 40px;
+            margin-right: 5px;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.contact-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+    box-shadow: -1px 1px 8px #00000045;
+    border-radius: 3px;
+
+    .info {
+        height: 100%;
+        padding: 10px;
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        >p {
+            margin: 0;
+        }
+
+        .data {
+            flex-grow: 1;
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            opacity: 0;
+            transform: translateX(-5%);
+            transition-duration: 0.3s;
+            transition-property: transform, opacity;
+            justify-content: flex-end;
+
+            .remove-btn {
+                width: 2em;
+                height: 2em;
+                background-color: inherit;
+                border-radius: 100%;
+                border: 1px solid black;
+                transition: 0.15s;
+                margin-bottom: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: orangered;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    &:hover .info .actions {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

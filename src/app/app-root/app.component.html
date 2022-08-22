@@ -1,0 +1,15 @@
+<section class="main-app">
+    <app-header></app-header>
+    <!-- <main class="container">
+        <section class="btn-choices">
+            <button *ngFor="let choice of choices" (click)="setCmp(choice)"  [ngClass]="{'chosen-cmp': cmpToShow === choice}" >{{choice}}</button>
+        </section>
+        <home-page *ngIf="cmpToShow==='home'"></home-page>
+        <contact-app *ngIf="cmpToShow==='contacts'"></contact-app>
+        <statistic-page *ngIf="cmpToShow==='charts'"></statistic-page>
+    </main> -->
+    <router-outlet></router-outlet>
+    <div class="space"></div>
+    <app-footer></app-footer>
+
+</section>

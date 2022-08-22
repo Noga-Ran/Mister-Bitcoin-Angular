@@ -1,0 +1,14 @@
+<section class="contact-preview" (click)="onSelectCotact()">
+    <section class="info">
+        <section class="actions">
+            <button (click)="onRemoveContact($event)" class="remove-btn">X</button>
+        </section>
+        <section class="data">
+            <p>Name: {{contact.name}}</p>
+            <p>Email: {{contact.email}}</p>
+            <p>Phone: {{contact.phone}}</p>
+        </section>
+
+        <img src="https://robohash.org/{{contact._id}}?set=set1" alt="">
+    </section>
+</section>
