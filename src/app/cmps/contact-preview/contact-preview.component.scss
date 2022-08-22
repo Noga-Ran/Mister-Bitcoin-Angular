@@ -1,6 +1,6 @@
 .contact-preview {
     display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -8,52 +8,65 @@
     box-shadow: -1px 1px 8px #00000045;
     border-radius: 3px;
 
+    button {
+        width: 2.5em;
+        height: 2.5em;
+    }
+
     .info {
-        height: 100%;
-        padding: 10px;
+        // height: 100%;
+        // padding: 10px;
         flex-grow: 1;
         position: relative;
         display: flex;
         flex-direction: column;
-        padding: 10px;
+        padding: 15px;
+        align-items: center;
 
-        >p {
+        p {
             margin: 0;
+            margin-bottom: 5px;
+            font-size: larger;
+            font-weight: 600;
         }
 
         .data {
             flex-grow: 1;
         }
 
-        .actions {
-            display: flex;
-            gap: 10px;
-            opacity: 0;
-            transform: translateX(-5%);
-            transition-duration: 0.3s;
-            transition-property: transform, opacity;
-            justify-content: flex-end;
+        img {
+            width: 50%;
+            max-width: 200px !important;
+        }
 
-            .remove-btn {
-                width: 2em;
-                height: 2em;
-                background-color: inherit;
-                border-radius: 100%;
-                border: 1px solid black;
-                transition: 0.15s;
-                margin-bottom: 5px;
-                cursor: pointer;
+    }
 
-                &:hover {
-                    background-color: orangered;
-                    color: white;
-                }
-            }
+    .actions {
+        display: flex;
+        gap: 10px;
+        transition-duration: 0.3s;
+        transition-property: transform, opacity;
+        justify-content: flex-start;
+        /* width: 100%; */
+        height: 100%;
+        padding: 10px;
+        background-color: #f2a900;
+        flex-direction: column;
+        align-items: center;
+
+        .remove-btn {
+            // border-radius: 100%;
+            border: 1px solid #9575cd;
+            color: #9575cd;
+            /* transition: 0.15s; */
+            /* margin-bottom: 5px; */
+            /* background-color: white; */
+            cursor: pointer;
         }
     }
 
     &:hover .info .actions {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(-5);
     }
 }

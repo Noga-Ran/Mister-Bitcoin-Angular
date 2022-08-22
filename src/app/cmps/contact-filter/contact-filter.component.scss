@@ -1,3 +1,12 @@
 .contact-filter {
     margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+
+    button {
+        width: 2.8em;
+        height: 2.8em;
+        background: none;
+        border: none;
+    }
 }
