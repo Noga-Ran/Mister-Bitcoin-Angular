@@ -1,0 +1,44 @@
+<section class="flex column">
+    <pre>
+{{form.value|json}}
+    </pre>
+
+    <form [formGroup]="form">
+        <h2>Model Registration Form</h2>
+        <div class="flex mb-2">
+            <input formControlName="first" placeholder="First name" type="text" />
+            <input formControlName="last" class="ml-2" placeholder="Last name" type="text" />
+        </div>
+        <input formControlName="username" placeholder="Username" />
+        <div formArrayName="addresses">
+            <div *ngFor="let address of addresses.controls; let idx = index" [formGroupName]="idx">
+                <p>Address {{idx+1}}</p>
+                <input formControlName="street" class="mb-2" placeholder="Street" type="text" />
+                <div class="flex align-center">
+                    <input formControlName="city" placeholder="City" class="flex-three" type="text" />
+                    <select formControlName="state" class="ml-1">
+                        <option value="" disabled>Select a state</option>
+                        <option value="CA">CA</option>
+                        <option value="NY">NY</option>
+                    </select>
+                    <input formControlName="zip" class="ml-1" placeholder="zip" type="number" />
+                </div>
+            </div>
+            <button (click)="onAddAddress()" [style.marginTop.px]="10" >Add Address</button>
+        </div>
+
+        <p>Would you like a newsletter?</p>
+        <label for="yes">
+            <input type="radio" id="yes" formControlName="newsletter" value="Yes">
+            Yes
+        </label>
+        <label for="no">
+            <input type="radio" id="no" formControlName="newsletter" value="No">
+            No
+        </label>
+        <br /> <br />
+        <div align="end">
+            <button md-button color="primary" type="submit">SUBMIT</button>
+        </div>
+    </form>
+</section>

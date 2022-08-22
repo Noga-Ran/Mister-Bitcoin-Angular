@@ -1,6 +1,7 @@
-<section class="contact-preview" (click)="onSelectCotact()">
+<section class="contact-preview" [routerLink]="['/contacts', contact._id]">
     <section class="info">
         <section class="actions">
+            <button (click)="onEditConatct($event,contact._id)" class="edit-btn">Edit</button>
             <button (click)="onRemoveContact($event)" class="remove-btn">X</button>
         </section>
         <section class="data">

@@ -6,6 +6,7 @@ header {
     color: whitesmoke;
     margin-bottom: 30px;
     font-size: 1.2em;
+    justify-content: space-between;
 
     .logo {
         display: flex;
@@ -14,6 +15,12 @@ header {
         img{
             width: 40px;
             margin-right: 5px;
+        }
+    }
+
+    nav {
+        a:not(:last-child) {
+            margin-right: 10px;
         }
     }
 }
