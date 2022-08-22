@@ -2,6 +2,8 @@ import { Component, Input,Output,EventEmitter, OnDestroy, OnInit } from '@angula
 import { lastValueFrom, Observable, Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
+import { ActivatedRoute, Router } from '@angular/router';
+
 
 @Component({
     selector: 'contact-details',
@@ -10,7 +12,12 @@ import { ContactService } from 'src/app/services/contact.service';
 })
 export class ContactDetailsComponent implements OnInit, OnDestroy {
 
-    constructor(private contactService: ContactService) { }
+    constructor(
+        private contactService: ContactService,
+        private route: ActivatedRoute,
+        private router: Router
+    ) { }
+
     @Input() contactId!: string
     @Output() goBack = new EventEmitter<string>()
     contact!: Contact
@@ -19,13 +26,14 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     // ans$!: Observable<string>
 
     onGoBack(){
-        this.goBack.emit()
+        this.router.navigateByUrl('/contacts')
     }
 
 
     async ngOnInit() {
-        const contact = await lastValueFrom(this.contactService.getContactById(this.contactId))
-        if (contact) this.contact = contact
+        this.route.data.subscribe(data => {
+            this.contact = data['contact']
+        })
 
     }
 

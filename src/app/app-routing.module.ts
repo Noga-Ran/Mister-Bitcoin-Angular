@@ -5,14 +5,18 @@ import { ContactDetailsComponent } from './pages/contact-details/user-details.co
 import { ContactEditPageComponent } from './pages/contact-edit-page/contact-edit-page.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { StatisticPageComponent } from './pages/statistic-page/statistic-page.component';
+import { ContactResolver } from './services/contact.resolver';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   {
     path: 'contacts', component: ContactAppComponent,
-    children: [{ path: 'edit', component: ContactEditPageComponent }]
+    children: [
+      { path: 'edit/:id', component: ContactEditPageComponent, resolve: {contact:ContactResolver} },
+      { path: 'edit', component: ContactEditPageComponent }
+    ]
   },
-  { path: 'contacts/:id', component: ContactDetailsComponent },
+  { path: 'contacts/:id', component: ContactDetailsComponent, resolve: {contact:ContactResolver} },
   { path: 'statistic', component: StatisticPageComponent },
 ];
 

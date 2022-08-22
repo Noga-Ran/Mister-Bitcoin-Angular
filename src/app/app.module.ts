@@ -16,6 +16,7 @@ import { StatisticPageComponent } from './pages/statistic-page/statistic-page.co
 import { GoogleChartsModule } from 'angular-google-charts';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
+import { EditFormComponent } from './cmps/edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
     ContactEditPageComponent,
     StatisticPageComponent,
     AppHeaderComponent,
-    AppFooterComponent
+    AppFooterComponent,
+    EditFormComponent
   ],
   imports: [
     BrowserModule,

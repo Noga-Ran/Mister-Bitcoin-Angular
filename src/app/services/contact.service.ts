@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of, throwError } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
 import { Contact } from '../models/contact.model';
 import { ContactFilter } from '../models/contact-filter.model';
-
-
 
 const CONTACTS = [
     {
@@ -126,6 +126,7 @@ const CONTACTS = [
 @Injectable({
     providedIn: 'root'
 })
+
 export class ContactService {
 
     //mock the server
@@ -137,9 +138,7 @@ export class ContactService {
     private _filterBy$ = new BehaviorSubject<ContactFilter>({ term: '' });
     public filterBy$ = this._filterBy$.asObservable()
 
-    constructor() {
-    }
-
+    constructor(private http: HttpClient) { }
 
     public loadContacts(filterBy: { term: string }): void {
         let contacts = this._contactsDb;
@@ -148,7 +147,6 @@ export class ContactService {
         }
         this._contacts$.next(this._sort(contacts))
     }
-
 
     public getContactById(id: string): Observable<Contact> {
         //mock the server work
@@ -170,17 +168,25 @@ export class ContactService {
         return contact._id ? this._updateContact(contact) : this._addContact(contact)
     }
 
+    public getEmptyContact() {
+        return { name: '', email: '', phone:'' }
+    }
+
     private _updateContact(contact: Contact) {
         //mock the server work
-        this._contactsDb = this._contactsDb.map(c => contact._id === c._id ? contact : c)
+        this._contactsDb = this._contactsDb.map(c => (c._id === contact._id) ? contact : c )
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._sort(this._contactsDb))
     }
 
     private _addContact(contact: Contact) {
         //mock the server work
-        const newContact = new Contact(contact.name, contact.email, contact.phone);
+        const newContact = new Contact();
         if (typeof newContact.setId === 'function') newContact.setId(getRandomId());
+        newContact.name = contact.name
+        newContact.phone = contact.phone
+        newContact.email = contact.email
+        
         this._contactsDb.push(newContact)
         this._contacts$.next(this._sort(this._contactsDb))
     }
