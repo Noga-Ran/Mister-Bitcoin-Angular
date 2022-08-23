@@ -13,8 +13,8 @@ export class StatisticPageComponent implements OnInit {
 
   constructor(private bitcoinService: BitcoinService) { }
 
-  width:number = window.innerWidth - 300
-  chartWide:number = 200
+  width:number = window.innerWidth - 100
+  chartWide:number = window.innerWidth * 0.78
 
   marketPriceType: ChartType = ChartType.AreaChart
   marketPriceChart = {
@@ -60,8 +60,8 @@ export class StatisticPageComponent implements OnInit {
 
   onResize(event:any){
     console.log(window.innerWidth);
-    
-    this.width = window.innerWidth
+    this.width = window.innerWidth - 10
+    this.chartWide = window.innerWidth * 0.78
     
   }
 

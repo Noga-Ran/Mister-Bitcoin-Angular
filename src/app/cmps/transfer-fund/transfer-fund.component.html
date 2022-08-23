@@ -1,7 +1,9 @@
 <section class="transfer">
     <h1>Transfer coins to {{contactName}}</h1>
-    <label for="coinsAmount">Amount:</label>
-    <input [(ngModel)]="amount" type="number" min="0" max="{{maxCoins}}" required>
-    <button (click)="transfer()" [disabled]="!amount">Transfer</button>
+    <section>
+        <label for="coinsAmount">Amount:</label>
+        <input [(ngModel)]="amount" type="number" min="0" max="{{maxCoins}}" required>
+        <button class="button-74" (click)="transfer()" [disabled]="!amount">Transfer</button>
+    </section>
     
 </section>

@@ -1,4 +1,7 @@
 .moves-container {
+    padding: 15px;
+    background-color: whitesmoke;
+    
     h1 {
         color: #333333;
         font-size: 25px;
@@ -9,6 +12,12 @@
     ul{
         margin: 0;
         padding: 0;
+        border-bottom: lightgray solid 1px;
+        padding: 15px 15px 15px 0;
+    }
+
+    ul:first-of-type{
+        border-top: lightgray solid 1px;
     }
 
     li{

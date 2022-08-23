@@ -1,11 +1,14 @@
 <section class="signup-container app-regular-padding">
-    <section *ngIf="!loggedInUser" class="sing-up">
+    <section *ngIf="!loggedInUser" class="sign-up">
         <img src="assets/icons/bitcoin.png" alt="">
-        <p>Please Enter Your Name:</p>
-        <input  [(ngModel)]="userName" type="text" id="" required>
-        <button (click)="login('login')">Sign Up</button>
+        <h1>Login</h1>
+        <div class="inputbox">
+            <input id="name" [(ngModel)]="userName" type="text" id="" placeholder="Your Name" required>
+        </div>
+        <button class="button-74" (click)="login('login')">Login</button>
     </section>
-    <section *ngIf="loggedInUser" class="log-out">
-        <button (click)="login('logout')">Log Out</button>
+    <section *ngIf="loggedInUser" class="log-out"  (click)="login('logout')">
+        <img src="assets/icons/exit.png">
+        <button class="line-text">Log Out</button>
     </section>
 </section>

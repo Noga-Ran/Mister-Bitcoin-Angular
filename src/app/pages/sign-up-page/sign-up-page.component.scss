@@ -1,0 +1,121 @@
+.sign-up {
+    background: linear-gradient(109.6deg, rgb(255, 207, 84) 11.2%, rgb(255, 158, 27) 91.1%);
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 5rem;
+    border-radius: 2em;
+    background-color: rgba(0, 0, 0, 0.75);
+    width: 30rem;
+    margin: auto;
+    align-items: center;
+    gap: 30px;
+    margin-top: 55px;
+    
+    h1 {
+        font-size: 2em;
+        border-left: 5px solid rgb(35, 35, 35);
+        padding: 10px;
+        color: #000;
+        letter-spacing: 5px;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+
+    img{
+        width: 100px;
+    }
+
+    .inputbox {
+        position: relative;
+        width: 300px;
+        margin-bottom: 50px;
+    }
+
+    .inputbox input {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: 2px solid #000;
+        outline: none;
+        background: none;
+        padding: 10px;
+        border-radius: 10px;
+        font-size: 1.2em;
+    }
+
+
+    .button-74 {
+        background-color: #fbeee0;
+        border: 2px solid #422800;
+        border-radius: 30px;
+        box-shadow: #422800 4px 4px 0 0;
+        color: #422800;
+        cursor: pointer;
+        display: inline-block;
+        font-weight: 600;
+        font-size: 18px;
+        padding: 0 18px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+    .button-74:hover {
+        background-color: #fff;
+    }
+
+    .button-74:active {
+        box-shadow: #422800 2px 2px 0 0;
+        transform: translate(2px, 2px);
+    }
+
+    @media (min-width: 768px) {
+        .button-74 {
+            min-width: 120px;
+            padding: 0 25px;
+        }
+    }
+}
+
+.log-out {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;    
+    margin-top: 110px;
+
+
+    img {
+        width: 220px;
+    }
+}
+
+.line-text {
+    margin: auto;
+    background: none;
+    border: none;
+    cursor: pointer;
+    $stroke-width: 110px * 0.05;
+    position: relative;
+    display: inline-block;
+    font-size: 90px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-style: italic;
+    color: transparent;
+    -webkit-text-stroke-width: $stroke-width;
+    white-space: nowrap;
+    $x: 10px;
+    $y: 13px;
+    $step: 1px;
+
+    text-shadow: $x $y orange,
+        $x + $step $y + $step rgb(139 183 240),
+        $x + $step * 2 $y + $step * 2 rgb(139 183 240),
+        $x + $step * 3 $y + $step * 3 rgb(139 183 240),
+        $x + $step * 4 $y + $step * 4 rgb(139 183 240),
+}
