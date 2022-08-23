@@ -5,7 +5,7 @@
     padding: 3rem 5rem;
     border-radius: 2em;
     background-color: rgba(0, 0, 0, 0.75);
-    width: 30rem;
+    width: 65vw;
     margin: auto;
     align-items: center;
     gap: 30px;
@@ -25,16 +25,7 @@
         width: 100px;
     }
 
-    .inputbox {
-        position: relative;
-        width: 300px;
-        margin-bottom: 50px;
-    }
-
     .inputbox input {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         border: 2px solid #000;
         outline: none;

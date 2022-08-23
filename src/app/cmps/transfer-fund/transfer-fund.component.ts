@@ -1,4 +1,4 @@
-import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from 'src/app/services/user.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -10,28 +10,27 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class TransferFundComponent implements OnInit {
 
   constructor(
-    private userService:UserService,
+    private userService: UserService,
     private router: Router,
     private route: ActivatedRoute,) { }
 
-  @Input() contactName!:string
-  @Input() maxCoins!:number
+  @Input() contactName!: string
+  @Input() maxCoins!: number
   @Output() onTransfer = new EventEmitter<number>()
-  
-  amount!:number
+
+  amount!: number
 
   ngOnInit(): void {
   }
 
-   transfer(){
+  transfer() {
     console.log(this.amount);
-    if(this.amount<=this.maxCoins){
+    if (this.amount <= this.maxCoins) {
       this.onTransfer.emit(this.amount)
       this.amount = 0
-      this.router.navigateByUrl('/')
+      var audio = new Audio('assets/sounds/coins.mp3');
+      audio.play();
     }
   }
-
-  
 
 }
