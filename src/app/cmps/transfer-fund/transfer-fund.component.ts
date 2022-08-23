@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'transfer-fund',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferFundComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private userService:UserService,
+    private router: Router,
+    private route: ActivatedRoute,) { }
+
+  @Input() contactName!:string
+  @Input() maxCoins!:number
+  @Output() onTransfer = new EventEmitter<number>()
+  
+  amount!:number
 
   ngOnInit(): void {
   }
+
+   transfer(){
+    console.log(this.amount);
+    if(this.amount<=this.maxCoins){
+      this.onTransfer.emit(this.amount)
+      this.amount = 0
+      this.router.navigateByUrl('/')
+    }
+  }
+
+  
 
 }

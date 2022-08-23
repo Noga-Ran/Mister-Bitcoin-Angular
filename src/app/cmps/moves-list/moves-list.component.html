@@ -1,1 +1,8 @@
-<p>moves-list works!</p>
+<section class="moves-container">
+    <h1>{{headLine}}</h1>
+    <ul *ngFor="let move of movesToDisplay">
+        <li *ngIf="url==='home'">To: {{move.to}}</li>
+        <li>At: {{move.at | date:'MMM d, y, h:mm:ss a'}}</li>
+        <li>Amount: {{move.amount}}</li>
+    </ul>
+</section>

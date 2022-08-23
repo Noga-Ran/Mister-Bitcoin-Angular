@@ -12,4 +12,6 @@
             <button class="button-87" (click)="removeContact()">Delete</button>
         </section>
     </section>
+    <transfer-fund [contactName]="contact.name" [maxCoins]="maxCoins" (onTransfer)="onTransfer($event)"></transfer-fund>
+    <moves-list [moves]="moves" [contactId]="contact._id"></moves-list>
 </section>

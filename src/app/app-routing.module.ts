@@ -6,7 +6,8 @@ import { ContactEditPageComponent } from './pages/contact-edit-page/contact-edit
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { StatisticPageComponent } from './pages/statistic-page/statistic-page.component';
 import { ContactResolver } from './services/contact.resolver';
-
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   {
@@ -20,6 +21,8 @@ const routes: Routes = [
     path: 'contacts/:id', component: ContactDetailsComponent, resolve: { contact: ContactResolver },
   },
   { path: 'statistic', component: StatisticPageComponent },
+  {path: 'signup', component: SignUpPageComponent},
+  { path: 'about', component: AboutPageComponent}
 ];
 
 @NgModule({

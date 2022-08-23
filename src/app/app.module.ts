@@ -23,6 +23,11 @@ import { StatisticPageComponent } from './pages/statistic-page/statistic-page.co
 import { GoogleChartsModule } from 'angular-google-charts';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
+import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
+import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { NaturalTypePipe } from './pipes/natural-type.pipe';
+import { MovesListComponent } from './cmps/moves-list/moves-list.component';
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component'; 
 
 @NgModule({
   declarations: [
@@ -37,6 +42,11 @@ import { AppFooterComponent } from './cmps/app-footer/app-footer.component';
     StatisticPageComponent,
     AppHeaderComponent,
     AppFooterComponent,
+    SignUpPageComponent,
+    AboutPageComponent,
+    NaturalTypePipe,
+    MovesListComponent,
+    TransferFundComponent,
   ],
   imports: [
     BrowserModule,

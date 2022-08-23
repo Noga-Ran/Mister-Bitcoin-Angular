@@ -59,6 +59,15 @@ input {
     text-align: inherit;
 }
 
+.decorate-h1{
+    font-size: xx-large;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #FF512F, #F09819);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
 // .container {
 //     padding-inline: 10vw;
 // }
@@ -79,4 +88,4 @@ a.active {
     }
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; }

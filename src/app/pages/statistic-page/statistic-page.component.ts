@@ -14,6 +14,7 @@ export class StatisticPageComponent implements OnInit {
   constructor(private bitcoinService: BitcoinService) { }
 
   width:number = window.innerWidth - 300
+  chartWide:number = 200
 
   marketPriceType: ChartType = ChartType.AreaChart
   marketPriceChart = {
@@ -25,7 +26,7 @@ export class StatisticPageComponent implements OnInit {
   ConfirmedTransactionsType: ChartType = ChartType.LineChart
   ConfirmedTransactionsChart = {
     title: 'Confirmed transactions per day ',
-    columns: ['day','x', 'y'],
+    columns: ['x', 'y'],
     options: { colors: ['black', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'], is3D: true }
   }
   tranData!: any
@@ -58,7 +59,9 @@ export class StatisticPageComponent implements OnInit {
   }
 
   onResize(event:any){
-    this.width = window.innerWidth - 300
+    console.log(window.innerWidth);
+    
+    this.width = window.innerWidth
     
   }
 

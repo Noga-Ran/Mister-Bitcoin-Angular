@@ -1,0 +1,82 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: 600;
+    background-image: linear-gradient(to left, #FF512F, #F09819);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+p {
+    color: #666666;
+}
+
+.about-app {
+    margin-bottom: 15px;
+
+    h1 {
+        margin-bottom: 15px;
+    }
+}
+
+.about-me {
+    box-shadow: -1px 1px 8px rgb(0 0 0 / 27%);
+    padding: 15px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.details {
+    display: flex;
+    border-bottom: dashed 1px lightgrey;
+    padding-bottom: 15px;
+    align-items: center;
+
+    @media (max-width: 520px) {
+        display: flex;
+        flex-direction: column;
+
+        img{
+            margin-bottom: 10px;
+            height: 20vh;
+        }
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    img {
+        width: 30vw;
+        height: 24vh;
+        min-width: 140px;
+        min-height: 120px;
+        border-radius: 50%;
+        margin-right: 10px;
+        max-width: 190px;
+    }
+
+    h1,
+    p {
+        margin-bottom: 7px;
+    }
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+    }
+}
