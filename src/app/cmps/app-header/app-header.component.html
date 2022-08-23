@@ -1,16 +1,3 @@
-<!-- <header class="container">
-    <section class="logo">
-        <img src="assets/icons/bitcoin.png" alt="" srcset="">
-        <h1>Mister Bitcoin</h1>
-    </section>
-    <nav>
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
-        <a routerLink="/contacts" routerLinkActive="active">Contacts</a>
-        <a routerLink="/statistic" routerLinkActive="active">Statistic</a>
-    </nav>
-    <nav-bar></nav-bar>
-</header> -->
-
 <header class="navbar container"  [ngClass]="{'navbar-fixed': isFixedNavbar}">
     <div class="container" fxLayout="row wrap" fxLayoutAlign="start center">
        <div class="navbar-mobile-top" fxLayout="row" fxLayoutWrap="wrap" fxLayoutAlign="start center">
@@ -29,6 +16,8 @@
           <a mat-button (click)="closeMenue()" class="navbartop-btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><strong>Home</strong></a>
           <a mat-button  (click)="closeMenue()" class="navbartop-btn" routerLink="/contacts" routerLinkActive="active"><strong>Contacts</strong></a>
           <a mat-button (click)="closeMenue()" class="navbartop-btn" routerLink="/statistic" routerLinkActive="active"><strong>Statistic</strong></a>
+          <a mat-button (click)="closeMenue()" class="navbartop-btn" routerLink="/signup" routerLinkActive="active"><strong>Sign Up</strong></a>
+          <a mat-button (click)="closeMenue()" class="navbartop-btn" routerLink="/about" routerLinkActive="active"><strong>About</strong></a>
        </div>
     </div>
   </header>
