@@ -1,15 +1,15 @@
 <section *ngIf="contact" class="contact-details app-regular-padding">
+    <section class="actions">
+        <button class="button-87" (click)="onGoBack()">Back</button>
+        <button class="button-87" (click)="onEdit()">Edit</button>
+        <button class="button-87" (click)="removeContact()">Delete</button>
+    </section>
     <section class="details">
         <img src="assets/icons/contact.png" alt="">
         <section>
-            <p><span>Name:</span> {{contact.name}}</p>
-            <p><span>Email:</span> {{contact.email}}</p>
-            <p><span>Phone:</span> {{contact.phone}}</p>
-        </section>
-        <section class="actions">
-            <button class="button-87" (click)="onGoBack()">Back</button>
-            <button class="button-87" (click)="onEdit()">Edit</button>
-            <button class="button-87" (click)="removeContact()">Delete</button>
+            <h1 class="decorate-h1">{{contact.name}}</h1>
+            <p>{{contact.phone}}</p>
+            <p>{{contact.email}}</p>
         </section>
     </section>
     <transfer-fund [contactName]="contact.name" [maxCoins]="maxCoins" (onTransfer)="onTransfer($event)"></transfer-fund>

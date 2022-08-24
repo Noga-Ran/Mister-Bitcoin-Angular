@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { ContactFilter } from 'src/app/models/contact-filter.model';
 import { ContactService } from 'src/app/services/contact.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { StorageService } from 'src/app/services/local.storage.service';
 
 @Component({
     selector: 'contact-filter',
@@ -14,7 +15,8 @@ export class ContactFilterComponent implements OnInit, OnDestroy {
     constructor(
         private contactService: ContactService,
         private route: ActivatedRoute,
-        private router: Router) { }
+        private router: Router,
+        private storage:StorageService) { }
         
     filterBy!: ContactFilter
     subscription!: Subscription
@@ -30,7 +32,8 @@ export class ContactFilterComponent implements OnInit, OnDestroy {
     }
 
     onAdd() {
-        this.router.navigateByUrl(`/contacts/edit`)
+        this.storage.store('url',{url:'contacts'})
+        this.router.navigateByUrl(`/edit`)
     }
 
     ngOnDestroy(): void {

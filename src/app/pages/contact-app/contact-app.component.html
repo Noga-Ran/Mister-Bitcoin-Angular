@@ -1,9 +1,5 @@
 <section class="contact-app app-regular-padding">
-    <contact-details (goBack)="onSelectContactId('')" [contactId]="selectedContactId" *ngIf="selectedContactId && selectedContactId!==''; else ContactList"></contact-details>
-
-    <ng-template #ContactList>
-        <contact-filter></contact-filter>
-        <contact-list (onSelect)="onSelectContactId($event)" (onRemove)="onRemoveContact($event)" [contacts]="contacts$ | async"></contact-list>
-    </ng-template>
+    <contact-filter></contact-filter>
+    <contact-list (onRemove)="onRemoveContact($event)" [contacts]="contacts$ | async"></contact-list>
 </section>
 <router-outlet></router-outlet>

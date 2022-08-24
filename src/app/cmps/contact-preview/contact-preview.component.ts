@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Contact } from 'src/app/models/contact.model';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { StorageService } from 'src/app/services/local.storage.service';
 
 @Component({
     selector: 'contact-preview',
@@ -12,7 +12,8 @@ export class ContactPreviewComponent implements OnInit {
 
     constructor(
         private route: ActivatedRoute,
-        private router: Router
+        private router: Router,
+        private storage: StorageService
     ) { }
     
     @Input() contact!: Contact
@@ -30,7 +31,8 @@ export class ContactPreviewComponent implements OnInit {
 
     onEditConatct(event:MouseEvent,contactId:any){
         event.stopPropagation()
-        this.router.navigateByUrl(`/contacts/edit/${contactId}`)
+        this.storage.store('url',{url:`contacts`})
+        this.router.navigateByUrl(`edit/${contactId}`)
     }
 
 }

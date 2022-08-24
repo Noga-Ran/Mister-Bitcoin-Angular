@@ -9,27 +9,29 @@ import { Move } from 'src/app/models/move.model';
 export class MovesListComponent implements OnInit {
 
   constructor() { }
-    url:string = ''
-    movesToDisplay!:Move[]
-    headLine!:string
 
   @Input() moves!: Move[]
-  @Input() contactId!:any
+  @Input() contactId!: string|undefined
+
+  url: string = ''
+  movesToDisplay!: Move[]
+  headLine!: string
+
 
   ngOnInit(): void {
-    if(!this.contactId) this.url = 'home'
+    if (!this.contactId) this.url = 'home'
     else this.url = 'contact'
 
-    this.getMoves()
+    this.getDisplayMoves()
   }
 
-  getMoves(){
-    if(this.url==='home'){
+  getDisplayMoves() {
+    if (this.url === 'home') {
       this.movesToDisplay = (this.moves.slice(-3)).reverse()
       this.headLine = 'Your Last 3 Moves:'
     }
-    else{
-      this.movesToDisplay = (this.moves.filter(move => move.toId===this.contactId)).reverse()
+    else {
+      this.movesToDisplay = (this.moves.filter(move => move.toId === this.contactId)).reverse()
       this.headLine = 'Your Moves:'
     }
   }

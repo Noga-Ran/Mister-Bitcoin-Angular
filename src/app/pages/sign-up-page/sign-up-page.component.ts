@@ -23,9 +23,11 @@ export class SignUpPageComponent implements OnInit {
 
   login(action:string) {
     if(action==='login'){
-      this.userService.signup(this.userName)
-      this.router.navigateByUrl('/')
-      this.userName = ''
+      if(this.userName){
+        this.userService.signup(this.userName)
+        this.router.navigateByUrl('/')
+        this.userName = ''
+      }
     }else{
       this.userService.logOut()
       this.loggedInUser = false

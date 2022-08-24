@@ -27,9 +27,9 @@ export class ContactAppComponent implements OnInit, OnDestroy {
     }
 
     onRemoveContact(contactId: string) {
-        console.log(contactId);
-
         this.contactService.deleteContact(contactId)
+        var audio = new Audio('assets/sounds/trash.mp3')
+        audio.play()
     }
 
     onSelectContactId(contactId: string) {

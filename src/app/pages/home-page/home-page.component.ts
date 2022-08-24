@@ -24,16 +24,19 @@ export class HomePageComponent implements OnInit {
     await this.userService.loadUser()
     const user = this.userService.user$
     this.user$ = user
-    // if(this.getUser?.coins){
     var ans = (await this.bitcoinService.getRate(this.getUser.coins)).subscribe((res: any) => {
       this.btc = res
       return res
-    })
-    
+    }) 
   }
 
   get getUser() {
-    const user = JSON.parse(JSON.stringify(this.user$))
-    return user.source._value[0]
+    try{
+      if(!this.user$) return null
+      const user = JSON.parse(JSON.stringify(this.user$))
+      return user.source._value[0]
+    }catch(err){
+      console.log(err);
+    }
   }
 }

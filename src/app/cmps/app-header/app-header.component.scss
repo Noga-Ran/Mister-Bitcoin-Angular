@@ -55,6 +55,10 @@ header {
         width: 40px;
         margin-right: 5px;
     }
+
+    h1{
+        font-size: large;
+    }
 }
 .mat-container {
     padding-right: 10vw;
@@ -72,9 +76,12 @@ header {
     }
 }
 
-.top-navbar {
-    padding-right: 10vw !important;
-    right: 0 !important;
+
+@media (min-width: 1000px){
+    .top-navbar {
+        padding-right: 10vw !important;
+        right: 0 !important;
+    }
 }
 
 

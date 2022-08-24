@@ -1,11 +1,11 @@
 <section class="signup-container app-regular-padding">
     <section *ngIf="!loggedInUser" class="sign-up">
         <img src="assets/icons/bitcoin.png" alt="">
-        <h1>Money can't buy happiness. But it can buy BTC! (whats mean you half way there)</h1>
+        <h1>Money can't buy happiness. But it can buy BTC (so you half way there)</h1>
         <div class="inputbox">
             <input id="name" [(ngModel)]="userName" type="text" id="" placeholder="Your Name" required>
         </div>
-        <button class="button-74" (click)="login('login')">Login</button>
+        <button class="button-74" [disabled]="!userName" (click)="login('login')">Login</button>
     </section>
     <section *ngIf="loggedInUser" class="log-out"  (click)="login('logout')">
         <img src="assets/icons/exit.png">

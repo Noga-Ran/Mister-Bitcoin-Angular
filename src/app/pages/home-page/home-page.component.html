@@ -1,4 +1,4 @@
-<section class="home-page-container app-regular-padding">
+<section class="home-page-container app-regular-padding" *ngIf="user$">
     <h2 class="decorate-h1">Hello {{getUser.name}}!</h2>
     <span>
         <img src="assets/icons/coins.png" alt="..">
@@ -9,9 +9,4 @@
         <p>BTC: {{btc}}</p>
     </span>
     <moves-list [moves]="getUser.moves"></moves-list>
-    <!-- <ul *ngFor="let move of getUser?.moves">
-        <li>{{move.to}}</li>
-        <li>{{move.at}}</li>
-        <li>{{move.amount}}</li>
-    </ul> -->
 </section>

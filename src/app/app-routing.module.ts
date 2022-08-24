@@ -11,18 +11,21 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   {
-    path: 'contacts', component: ContactAppComponent,
-    children: [
-      { path: 'edit/:id', component: ContactEditPageComponent, resolve: { contact: ContactResolver } },
-      { path: 'edit', component: ContactEditPageComponent }
-    ]
-  },
-  {
     path: 'contacts/:id', component: ContactDetailsComponent, resolve: { contact: ContactResolver },
   },
+  {
+    path: 'contacts', component: ContactAppComponent,
+    // children: [
+    //   { path: 'edit/:id', component: ContactEditPageComponent, resolve: { contact: ContactResolver } },
+    //   { path: 'edit', component: ContactEditPageComponent }
+    // ]
+  },
+  { path: 'edit/:id', component: ContactEditPageComponent, resolve: { contact: ContactResolver } },
+  { path: 'edit', component: ContactEditPageComponent },
   { path: 'statistic', component: StatisticPageComponent },
-  {path: 'signup', component: SignUpPageComponent},
-  { path: 'about', component: AboutPageComponent}
+  { path: 'signup', component: SignUpPageComponent },
+  { path: 'about', component: AboutPageComponent },
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

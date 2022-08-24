@@ -27,7 +27,8 @@ import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component
 import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NaturalTypePipe } from './pipes/natural-type.pipe';
 import { MovesListComponent } from './cmps/moves-list/moves-list.component';
-import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component'; 
+import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
+import { InputValidatorDirective } from './directives/input-validator.directive'; 
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.compon
     NaturalTypePipe,
     MovesListComponent,
     TransferFundComponent,
+    InputValidatorDirective,
   ],
   imports: [
     BrowserModule,

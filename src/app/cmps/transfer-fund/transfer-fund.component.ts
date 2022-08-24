@@ -24,12 +24,12 @@ export class TransferFundComponent implements OnInit {
   }
 
   transfer() {
-    console.log(this.amount);
     if (this.amount <= this.maxCoins) {
       this.onTransfer.emit(this.amount)
       this.amount = 0
       var audio = new Audio('assets/sounds/coins.mp3');
       audio.play();
+      this.router.navigateByUrl('/')
     }
   }
 

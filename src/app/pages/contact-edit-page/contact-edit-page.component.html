@@ -1,24 +1,24 @@
-<section class="wrapper" [style.top]="top">
-    <form *ngIf="contact" class="contact-edit" #form="ngForm" (ngSubmit)="onSaveContact(form)">
-    
-        <h1>{{title}}</h1>
-    
-        <div class="inputs">
-            <span>
-                <input name="name"  [(ngModel)]="contact.name" placeholder="First name" type="text" required/>
-            </span>
-            <span>                
-                <input name="email" [(ngModel)]="contact.email" placeholder="Your Email" type="email" required/>
-            </span>
-            <span>
-                <input name="phone" [(ngModel)]="contact.phone" placeholder="Your Phone Number" type="tel" required/>
-            </span>
-        </div>
+<form *ngIf="contact" class="contact-edit" #form="ngForm" (ngSubmit)="onSaveContact(form)">
 
-        <div class="btns">
-            <button class="button-87" [disabled]="form.invalid" md-button color="primary" type="submit">SUBMIT</button>
-            <button class="button-87" md-button color="primary" (click)="onCancel($event)">CANCEL</button>
-        </div>
-    
-    </form>
-</section>
+    <h1>{{title}}</h1>
+
+    <div class="inputs">
+        <span>
+            <p *ngIf="userEdit.name && nameInput.value===''">not valid</p>
+            <input #nameInput inputValidator typeInput="name" (onBlur)="onBlur($event)" name="name" [(ngModel)]="contact.name" placeholder="First name" type="text" required/>
+        </span>
+        <span>                
+            <p *ngIf="userEdit.email && emailInput.value===''">not valid</p>
+            <input #emailInput inputValidator typeInput="email" (onBlur)="onBlur($event)" name="email"  [(ngModel)]="contact.email" placeholder="Your Email" type="email" required/>
+        </span>
+        <span>
+            <p *ngIf="userEdit.phone && phoneInput.value===''">not valid</p>
+            <input #phoneInput inputValidator typeInput="phone" (onBlur)="onBlur($event)" name="phone" [(ngModel)]="contact.phone" placeholder="Your Phone Number" type="tel" required/>
+        </span>
+    </div>
+    <div class="btns">
+        <button class="button-87" [disabled]="form.invalid" md-button color="primary" type="submit">SUBMIT</button>
+        <button class="button-87" md-button color="primary" (click)="onCancel($event)">CANCEL</button>
+    </div>
+
+</form>

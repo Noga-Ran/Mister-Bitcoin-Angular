@@ -3,25 +3,26 @@
     flex-direction: column;
 }
 
+.actions {
+    display: flex;
+    justify-content: space-around;
+}
+
 .details {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: stretch;
+    flex-direction: column;
+    align-items: center;
     background-color: whitesmoke;
     padding: 15px;
     border-radius: 5px;
     box-shadow: -1px 1px 8px rgb(0 0 0 / 50%);
-
+    gap: 10px;
+    
     section {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        margin-left: 40px;
-
-        span{
-            font-weight: 600;
-        }
+        align-items: center;
+        gap: 10px;
     }
 
     img {
@@ -59,4 +60,3 @@
 .button-87:active {
     transform: scale(0.95);
 }
-

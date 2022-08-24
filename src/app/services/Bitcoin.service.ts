@@ -19,7 +19,6 @@ export class BitcoinService {
     prices$: any
 
     async getRate(coins: number) {
-        console.log('coins',coins);
         return this.http.get(`https://blockchain.info/tobtc?currency=USD&value=${coins}`)
     }
 

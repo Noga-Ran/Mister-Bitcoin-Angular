@@ -6,6 +6,7 @@ import { ContactService } from 'src/app/services/contact.service';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NgForm } from '@angular/forms';
 import { HostListener } from '@angular/core';
+import { StorageService } from 'src/app/services/local.storage.service';
 
 @Component({
   selector: 'contact-edit-page',
@@ -19,12 +20,17 @@ export class ContactEditPageComponent implements OnInit {
     private contactService: ContactService,
     private router: Router,
     private route: ActivatedRoute,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private storage:StorageService
   ) { }
 
   contact!: Contact
   title:string = ''
-  top:string = '0px';
+  userEdit:{name:boolean,phone:boolean,email:boolean} = {
+    name: false,
+    phone: false,
+    email:false
+  }
 
   ngOnInit(): void {
     this.route.data.subscribe(({ contact }) => {
@@ -38,21 +44,23 @@ export class ContactEditPageComponent implements OnInit {
     })
   }
 
-  @HostListener("window:scroll", []) 
-  onWindowScroll() {
-    // do some stuff here when the window is scrolled
-    const verticalOffset = window.scrollY
-    this.top = verticalOffset+'px'          
-}
-
   onCancel(event:MouseEvent){
     event.stopPropagation()
-    this.router.navigateByUrl('/contacts')
+    const preUrl = this.storage.load('url')
+    this.router.navigateByUrl(`/${preUrl.url}`)
   }
 
   async onSaveContact(form: NgForm) {
     this.contactService.saveContact(this.contact)
-    this.router.navigateByUrl('/contacts')
+    const preUrl = this.storage.load('url')
+    this.router.navigateByUrl(`/${preUrl.url}`)
+    // this.router.navigateByUrl('/contacts')
+  }
+
+  onBlur(input:string){
+    if(input==='name') this.userEdit.name = true
+    if(input==='phone') this.userEdit.phone = true
+    if(input==='email') this.userEdit.email = true
   }
 
 }

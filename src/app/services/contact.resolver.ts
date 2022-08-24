@@ -11,7 +11,6 @@ import { ContactService } from './contact.service';
 export class ContactResolver implements Resolve<Observable<Contact | void>> {
 
   constructor(private contactService: ContactService) { }
-
   resolve(route: ActivatedRouteSnapshot) {
     const id = route.params['id']
         return this.contactService.getContactById(id)

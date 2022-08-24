@@ -6,6 +6,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user.model';
 import { Move } from 'src/app/models/move.model';
+import { StorageService } from 'src/app/services/local.storage.service';
+
 @Component({
     selector: 'contact-details',
     templateUrl: './contact-details.component.html',
@@ -17,11 +19,10 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
         private contactService: ContactService,
         private route: ActivatedRoute,
         private router: Router,
-        private userService: UserService
+        private userService: UserService,
+        private storage: StorageService
     ) { }
 
-    @Input() contactId!: string
-    @Output() goBack = new EventEmitter<string>()
     contact!: Contact
     ans!: string
     subscription!: Subscription
@@ -30,18 +31,19 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     moves!: Move[]
     // ans$!: Observable<string>
 
-    onGoBack() {
-        this.router.navigateByUrl('/contacts')
-    }
-
+    
     async ngOnInit() {
         this.route.data.subscribe(data => {
             this.contact = data['contact']
-        })
+        })        
         const user = this.userService.user$
         this.user$ = user
         this.maxCoins = this.getUser.coins
         this.moves = this.getUser.moves
+    }
+
+    onGoBack() {
+        this.router.navigateByUrl('/contacts')
     }
 
     removeContact() {
@@ -50,7 +52,9 @@ export class ContactDetailsComponent implements OnInit, OnDestroy {
     }
 
     onEdit() {
-        this.router.navigateByUrl(`/contacts/edit/${this.contact._id}`)
+        this.storage.store('url',{url:`contacts/${this.contact._id}`})
+        this.router.navigate([`/edit/${this.contact._id}`])
+        // this.router.navigateByUrl(`/contacts/${this.contact._id}/edit/${this.contact._id}`)
     }
 
     onTransfer(amount: number) {
