@@ -1,6 +1,15 @@
 <section class="charts-container app-regular-padding" [style.width]="chartWide" (window:resize)="onResize($event)">
     
-    <google-chart style="height: 300px;" [width]="chartWide" [type]="marketPriceType"  [title]="marketPriceChart.title" [data]="marketData" [options]="marketPriceChart.options"></google-chart>
-    <google-chart style="height: 300px;" [width]="chartWide" [type]="ConfirmedTransactionsType" [title]="ConfirmedTransactionsChart.title" [data]="tranData" [options]="ConfirmedTransactionsChart.options"></google-chart>
+    <google-chart style="height: 300px;" [width]="chartWide" [title]="marketChart.title"
+    [type]="marketPriceType" 
+    [data]="marketChart.data" 
+    [columns]="marketChart.columnNames"
+    [options]="marketChart.options"></google-chart>
+    
+    <google-chart style="height: 300px;" [width]="chartWide" [title]="transactionsChart.title"
+    [type]="transactionsType" 
+    [data]="transactionsChart.data" 
+    [columns]="transactionsChart.columnNames"
+    [options]="transactionsChart.options"></google-chart>
 
 </section>

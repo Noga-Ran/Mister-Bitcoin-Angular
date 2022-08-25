@@ -27,7 +27,7 @@ export class BitcoinService {
     }
 
     async getConfirmedTransactions() {
-        return await this.getData('trade-volume')
+        return await this.getData('n-transactions')
     }
 
     async load(key:string){
@@ -39,6 +39,6 @@ export class BitcoinService {
     }
 
     async getData(val: string) {
-        return this.http.get(`https://api.blockchain.info/charts/${val}?timespan=5months&format=json&cors=true`)
+        return this.http.get<any>(`https://api.blockchain.info/charts/${val}?timespan=2weeks&format=json&cors=true`)
     }
 }
