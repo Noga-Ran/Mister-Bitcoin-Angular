@@ -47,14 +47,15 @@ export class ContactEditPageComponent implements OnInit {
   onCancel(event:MouseEvent){
     event.stopPropagation()
     const preUrl = this.storage.load('url')
-    this.router.navigateByUrl(`/${preUrl.url}`)
+    if(preUrl) this.router.navigateByUrl(`/${preUrl.url}`)
+    else this.router.navigateByUrl(`/contacts`)
   }
 
   async onSaveContact(form: NgForm) {
     this.contactService.saveContact(this.contact)
     const preUrl = this.storage.load('url')
-    this.router.navigateByUrl(`/${preUrl.url}`)
-    // this.router.navigateByUrl('/contacts')
+    if(preUrl) this.router.navigateByUrl(`/${preUrl.url}`)
+    else this.router.navigateByUrl(`/contacts`)
   }
 
   onBlur(input:string){

@@ -8,7 +8,7 @@ import { Observable, Subscription } from 'rxjs';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title = 'inClass-Contacts';
+    title = 'mister-bitcoin';
     choices: any = ['home','contacts','charts']
     cmpToShow: string = 'home'
 

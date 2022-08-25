@@ -8,6 +8,8 @@ import { StatisticPageComponent } from './pages/statistic-page/statistic-page.co
 import { ContactResolver } from './services/contact.resolver';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   {
@@ -25,7 +27,7 @@ const routes: Routes = [
   { path: 'statistic', component: StatisticPageComponent },
   { path: 'signup', component: SignUpPageComponent },
   { path: 'about', component: AboutPageComponent },
-  // { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

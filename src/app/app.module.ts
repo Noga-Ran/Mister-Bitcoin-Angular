@@ -10,7 +10,6 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { MatDividerModule } from '@angular/material/divider'
 
-
 import { AppComponent } from './app-root/app.component';
 import { ContactAppComponent } from './pages/contact-app/contact-app.component';
 import { ContactListComponent } from './cmps/contact-list/contact-list.component';
@@ -28,7 +27,11 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
 import { NaturalTypePipe } from './pipes/natural-type.pipe';
 import { MovesListComponent } from './cmps/moves-list/moves-list.component';
 import { TransferFundComponent } from './cmps/transfer-fund/transfer-fund.component';
-import { InputValidatorDirective } from './directives/input-validator.directive'; 
+import { InputValidatorDirective } from './directives/input-validator.directive';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { ChangesBackgroundColorDirective } from './directives/changes-background-color.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment'; 
 
 @NgModule({
   declarations: [
@@ -49,6 +52,8 @@ import { InputValidatorDirective } from './directives/input-validator.directive'
     MovesListComponent,
     TransferFundComponent,
     InputValidatorDirective,
+    PageNotFoundComponent,
+    ChangesBackgroundColorDirective,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +68,13 @@ import { InputValidatorDirective } from './directives/input-validator.directive'
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
-    MatDividerModule
+    MatDividerModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

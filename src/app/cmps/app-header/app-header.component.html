@@ -11,7 +11,7 @@
               </button>
           </section>
        </div>
-       <div fxFlex class="top-navbar">
+       <div fxFlex class="top-navbar slide-bottom">
           <span fxFlex></span>
           <a mat-button (click)="closeMenue()" class="navbartop-btn" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><strong>Home</strong></a>
           <a mat-button  (click)="closeMenue()" class="navbartop-btn" routerLink="/contacts" routerLinkActive="active"><strong>Contacts</strong></a>
@@ -19,5 +19,8 @@
           <a mat-button (click)="closeMenue()" class="navbartop-btn" routerLink="/signup" routerLinkActive="active"><strong>Sign Up</strong></a>
           <a mat-button (click)="closeMenue()" class="navbartop-btn" routerLink="/about" routerLinkActive="active"><strong>About</strong></a>
        </div>
-    </div>
-  </header>
+
+      </div>
+   </header>
+   <!-- <h3>Click the button to change its color!</h3>
+  <button (click)="toggleIsCorrect()" [@toggleClick]="isGreen">Toggle Me!</button> -->
