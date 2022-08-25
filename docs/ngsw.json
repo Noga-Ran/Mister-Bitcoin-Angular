@@ -1,0 +1,113 @@
+{
+  "configVersion": 1,
+  "timestamp": 1661412410422,
+  "index": "/Mister-Bitcoin-Angular/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Mister-Bitcoin-Angular/favicon.ico",
+        "/Mister-Bitcoin-Angular/index.html",
+        "/Mister-Bitcoin-Angular/main.a0a331f263a4a8e8.js",
+        "/Mister-Bitcoin-Angular/manifest.webmanifest",
+        "/Mister-Bitcoin-Angular/polyfills.b4c19097b89a15c8.js",
+        "/Mister-Bitcoin-Angular/runtime.52f93e2f952b465b.js",
+        "/Mister-Bitcoin-Angular/styles.38f694f2462b23ab.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Mister-Bitcoin-Angular/assets/icons/about.svg",
+        "/Mister-Bitcoin-Angular/assets/icons/arrow-down.png",
+        "/Mister-Bitcoin-Angular/assets/icons/arrow-up.png",
+        "/Mister-Bitcoin-Angular/assets/icons/back.png",
+        "/Mister-Bitcoin-Angular/assets/icons/bitcoin.png",
+        "/Mister-Bitcoin-Angular/assets/icons/coins.png",
+        "/Mister-Bitcoin-Angular/assets/icons/contact.png",
+        "/Mister-Bitcoin-Angular/assets/icons/delete.png",
+        "/Mister-Bitcoin-Angular/assets/icons/edit.png",
+        "/Mister-Bitcoin-Angular/assets/icons/exit.png",
+        "/Mister-Bitcoin-Angular/assets/icons/home.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-128x128.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-144x144.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-152x152.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-192x192.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-384x384.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-512x512.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-72x72.png",
+        "/Mister-Bitcoin-Angular/assets/icons/icon-96x96.png",
+        "/Mister-Bitcoin-Angular/assets/icons/increase.png",
+        "/Mister-Bitcoin-Angular/assets/icons/plus.png",
+        "/Mister-Bitcoin-Angular/assets/icons/users.png",
+        "/Mister-Bitcoin-Angular/assets/sounds/coins.mp3",
+        "/Mister-Bitcoin-Angular/assets/sounds/trash.mp3"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/Mister-Bitcoin-Angular/assets/icons/about.svg": "5305c666e27d5aadc3089e5729f9b0a8e96a6580",
+    "/Mister-Bitcoin-Angular/assets/icons/arrow-down.png": "e94d04d13ec04de226cb33dd70bc3336723ba2e2",
+    "/Mister-Bitcoin-Angular/assets/icons/arrow-up.png": "cd0fd49ac6001877e968fc2ecd52aa9773b58102",
+    "/Mister-Bitcoin-Angular/assets/icons/back.png": "593365f6052d4fd2962a522a1e9e261a03f69f80",
+    "/Mister-Bitcoin-Angular/assets/icons/bitcoin.png": "eb934ca7e5476aedcf9114639a8c453ea0fd2f9f",
+    "/Mister-Bitcoin-Angular/assets/icons/coins.png": "1edd2a1072f1ca9ebd9bcfbe9433a89b7921492b",
+    "/Mister-Bitcoin-Angular/assets/icons/contact.png": "7e7d5c03503c0b039b914518fbd24aa33f1361d1",
+    "/Mister-Bitcoin-Angular/assets/icons/delete.png": "c02286a33585eee171e1da21cd6cd369667dca92",
+    "/Mister-Bitcoin-Angular/assets/icons/edit.png": "d8be2389e1f530d2e20f9ce43f7cf1e774ebf077",
+    "/Mister-Bitcoin-Angular/assets/icons/exit.png": "65aeec7bb562cfd1f3ace1ae6298fb6936a35a0d",
+    "/Mister-Bitcoin-Angular/assets/icons/home.png": "5bc019495568b7fe703d4736f43f608afed34484",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/Mister-Bitcoin-Angular/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/Mister-Bitcoin-Angular/assets/icons/increase.png": "c9c0dce48ac982d934c7ec40e418ba9f068c1373",
+    "/Mister-Bitcoin-Angular/assets/icons/plus.png": "1142932a8b622c94aa994a57bc5714cf6fbeeafb",
+    "/Mister-Bitcoin-Angular/assets/icons/users.png": "2abfa4c086a43de978616aeffcc77b8063cc08af",
+    "/Mister-Bitcoin-Angular/assets/sounds/coins.mp3": "c405919a275c2673bdb2e7892887a2c836902f5b",
+    "/Mister-Bitcoin-Angular/assets/sounds/trash.mp3": "211d61e7eeb0f5331a590a24c6774c76c30e2c3e",
+    "/Mister-Bitcoin-Angular/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/Mister-Bitcoin-Angular/index.html": "0f9410b62f5684a72c8fd16b144078b453c40713",
+    "/Mister-Bitcoin-Angular/main.a0a331f263a4a8e8.js": "61f698287357bd4354430eff86e7e5ac91930c07",
+    "/Mister-Bitcoin-Angular/manifest.webmanifest": "004456b139462f4491e8db0f6aaf14cc5a3cf496",
+    "/Mister-Bitcoin-Angular/polyfills.b4c19097b89a15c8.js": "a661fdfedca3d04746f367b47339062a72096f72",
+    "/Mister-Bitcoin-Angular/runtime.52f93e2f952b465b.js": "bf3ad376b07c3bf1dacbeb974c1afff52742e8f0",
+    "/Mister-Bitcoin-Angular/styles.38f694f2462b23ab.css": "6cde9185f0e8e748c7515e01c8ba0b8de96863af"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
