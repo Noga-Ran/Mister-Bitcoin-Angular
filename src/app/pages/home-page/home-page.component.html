@@ -2,11 +2,11 @@
     <h2 class="decorate-h1">Hello {{getUser.name}}!</h2>
     <span>
         <img src="assets/icons/coins.png" alt="..">
-        <p>Coins: {{getUser.coins}}</p>
+        <p>Dolars: {{getUser.coins/btc | currency}}</p>
     </span>
     <span>
         <img src="assets/icons/bitcoin.png" alt="..">
-        <p>BTC: {{btc}}</p>
+        <p>BTC: {{getUser.coins}}</p>
     </span>
     <moves-list [moves]="getUser.moves"></moves-list>
 </section>

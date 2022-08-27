@@ -3,13 +3,13 @@
     border-radius: 5px;
     padding: 15px;
 
-    *:not(:last-child) {
-        margin-bottom: 10px;
-    }
-
+    // *:not(:last-child) {
+    // }
+    
     span {
         display: flex;
         align-items: center;
+        margin-bottom: 10px;
 
         :first-child {
             margin-right: 5px;

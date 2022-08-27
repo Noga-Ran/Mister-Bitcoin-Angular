@@ -57,16 +57,7 @@ export class AppHeaderComponent implements OnInit {
 
   toggleNavbar() {
     this.navbarOpened = !this.navbarOpened;
-    console.log(this.navbarOpened);
-    
   }
-
-  // fadeIn(){
-  //   if(this.isActive==='active') this.isActive = ''
-  //   else this.isActive='active'
-  //   console.log(this.isActive)
-  // }
-
   toggleIsCorrect() {
     this.isGreen = this.isGreen === 'true' ? 'false' : 'true'; // change in data-bound value
   }

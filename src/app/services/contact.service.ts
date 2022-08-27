@@ -144,18 +144,19 @@ export class ContactService {
 
     public loadContacts(filterBy: { term: string }): void {
         var contacts = this.storage.load(this.KEY)
-        console.log(contacts,contacts.length);
         
         if(!contacts || contacts.length===0){
             this._contactsDb = CONTACTS
             contacts = this._contactsDb;
             this.storage.store(this.KEY,contacts)
+        }else{
+            this._contactsDb = contacts
         }
         
         if (filterBy && filterBy.term) {
             contacts = this._filter(contacts, filterBy.term)
         }
-        this._contacts$.next(this._sort(contacts))
+        this._contacts$.next(this._sort(contacts))   
     }
 
     public getContactById(id: string): Observable<Contact> {
