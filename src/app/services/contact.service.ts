@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { Contact } from '../models/contact.model';
 import { ContactFilter } from '../models/contact-filter.model';
+import { StorageService } from './local.storage.service';
 
 const CONTACTS = [
     {
@@ -138,10 +139,19 @@ export class ContactService {
     private _filterBy$ = new BehaviorSubject<ContactFilter>({ term: '' });
     public filterBy$ = this._filterBy$.asObservable()
 
-    constructor(private http: HttpClient) { }
+    KEY:string='contacts'
+    constructor(private http: HttpClient, private storage:StorageService) { }
 
     public loadContacts(filterBy: { term: string }): void {
-        let contacts = this._contactsDb;
+        var contacts = this.storage.load(this.KEY)
+        console.log(contacts,contacts.length);
+        
+        if(!contacts || contacts.length===0){
+            this._contactsDb = CONTACTS
+            contacts = this._contactsDb;
+            this.storage.store(this.KEY,contacts)
+        }
+        
         if (filterBy && filterBy.term) {
             contacts = this._filter(contacts, filterBy.term)
         }
@@ -151,7 +161,7 @@ export class ContactService {
     public getContactById(id: string): Observable<Contact> {
         //mock the server work
         const contact = this._contactsDb.find(contact => contact._id === id)
-
+    
         //return an observable
         return contact ? of(contact) : throwError(() => `Contact id ${id} not found!`)
     }
@@ -159,9 +169,9 @@ export class ContactService {
     public deleteContact(id: string) {
         //mock the server work
         this._contactsDb = this._contactsDb.filter(contact => contact._id !== id)
-
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._contactsDb)
+        this.storage.store(this.KEY,this._contactsDb)
     }
 
     public saveContact(contact: Contact) {
@@ -177,6 +187,7 @@ export class ContactService {
         this._contactsDb = this._contactsDb.map(c => (c._id === contact._id) ? contact : c )
         // change the observable data in the service - let all the subscribers know
         this._contacts$.next(this._sort(this._contactsDb))
+        this.storage.store(this.KEY,this._contactsDb)
     }
 
     private _addContact(contact: Contact) {
@@ -189,6 +200,7 @@ export class ContactService {
         
         this._contactsDb.push(newContact)
         this._contacts$.next(this._sort(this._contactsDb))
+        this.storage.store(this.KEY,this._contactsDb)
     }
 
     private _sort(contacts: Contact[]): Contact[] {

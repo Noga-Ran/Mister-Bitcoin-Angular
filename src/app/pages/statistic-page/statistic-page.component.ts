@@ -52,7 +52,8 @@ export class StatisticPageComponent implements OnInit {
     this.transactionsChart.columnNames = ['Month', 'Transactions']
     this.transactionsChart.options.colors = ['#90ee90']
     this.transactionsChart.options.titleTextStyle.color =  '#90ee90'
-    this.transactionsChart.title = res.name;
+    this.transactionsChart.options.titleTextStyle.fontSize
+    this.transactionsChart.title = 'Transactions';
   }
 
   filterMarketData(res: any): void {
@@ -76,7 +77,6 @@ export class StatisticPageComponent implements OnInit {
   }
 
   onResize(event: any) {
-    console.log(window.innerWidth);
     this.width = window.innerWidth - 10
     this.chartWide = window.innerWidth * 0.78
   }
