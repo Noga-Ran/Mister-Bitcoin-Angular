@@ -1,7 +1,6 @@
 .contact-preview {
     display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
+    flex-direction: row;
     justify-content: center;
     cursor: pointer;
     height: 100%;
@@ -14,20 +13,26 @@
     }
 
     .info {
-        // height: 100%;
-        // padding: 10px;
         flex-grow: 1;
         position: relative;
         display: flex;
-        flex-direction: column;
         padding: 15px;
         align-items: center;
+        background-color: #151515;
 
-        p {
+        p{
+            color: whitesmoke;
+        }
+
+        p:first-of-type {
             margin: 0;
             margin-bottom: 10px;
-            font-size: x-large;
+            font-size: 86%;
             font-weight: 600;
+        }
+
+        p:nth-of-type(2){
+            font-size: 80%;
         }
 
         .data {
@@ -35,8 +40,10 @@
         }
 
         img {
-            width: 50%;
+            width: 40%;
+            margin-right: 10px;
             max-width: 200px !important;
+            filter: invert(96%) sepia(43%) saturate(6837%) hue-rotate(183deg) brightness(124%) contrast(92%);
         }
 
     }
@@ -56,7 +63,6 @@
 
         .remove-btn {
             // border-radius: 100%;
-            border: 1px solid #9575cd;
             color: #9575cd;
             /* transition: 0.15s; */
             /* margin-bottom: 5px; */

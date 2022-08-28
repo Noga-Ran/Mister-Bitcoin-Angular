@@ -15,24 +15,29 @@ export class ContactPreviewComponent implements OnInit {
         private router: Router,
         private storage: StorageService
     ) { }
-    
+
     @Input() contact!: Contact
     @Output() onRemove = new EventEmitter<string>()
-    @Output() onSelect = new EventEmitter<string>()
+    @Output() onCopy = new EventEmitter<string>()
 
     ngOnInit(): void {
     }
 
 
-    onRemoveContact(event:MouseEvent) {
+    onRemoveContact(event: MouseEvent) {
         event.stopPropagation()
         this.onRemove.emit(this.contact._id)
     }
 
-    onEditConatct(event:MouseEvent,contactId:any){
+    onEditConatct(event: MouseEvent, contactId: any) {
         event.stopPropagation()
-        this.storage.store('url',{url:`contacts`})
+        this.storage.store('url', { url: `contacts` })
         this.router.navigateByUrl(`edit/${contactId}`)
+    }
+
+    onCopyToCB(event: MouseEvent) {
+        event.stopPropagation()
+        this.onCopy.emit(this.contact.phone)
     }
 
 }

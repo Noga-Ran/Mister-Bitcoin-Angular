@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Move } from 'src/app/models/move.model';
+import { BitcoinService } from 'src/app/services/Bitcoin.service';
 
 @Component({
   selector: 'moves-list',
@@ -8,7 +9,7 @@ import { Move } from 'src/app/models/move.model';
 })
 export class MovesListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private bitcoinService: BitcoinService) { }
 
   @Input() moves!: Move[]
   @Input() contactId!: string|undefined
@@ -17,11 +18,10 @@ export class MovesListComponent implements OnInit {
   movesToDisplay!: Move[]
   headLine!: string
 
-
   ngOnInit(): void {
     if (!this.contactId) this.url = 'home'
     else this.url = 'contact'
-
+    
     this.getDisplayMoves()
   }
 

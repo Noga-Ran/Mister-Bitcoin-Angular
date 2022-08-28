@@ -1,5 +1,5 @@
 <section class="contact-app app-regular-padding">
     <contact-filter></contact-filter>
-    <contact-list (onRemove)="onRemoveContact($event)" [contacts]="contacts$ | async"></contact-list>
+    <contact-list (onRemove)="onRemoveContact($event)" (onCopy)="onCopy($event)" [contacts]="contacts$ | async"></contact-list>
 </section>
 <router-outlet></router-outlet>

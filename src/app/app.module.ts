@@ -32,6 +32,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { ChangesBackgroundColorDirective } from './directives/changes-background-color.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment'; 
+import { UserMsgComponent } from './cmps/user-msg/user-msg.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { environment } from '../environments/environment';
     InputValidatorDirective,
     PageNotFoundComponent,
     ChangesBackgroundColorDirective,
+    UserMsgComponent
   ],
   imports: [
     BrowserModule,

@@ -2,7 +2,8 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { Contact } from 'src/app/models/contact.model';
 import { ContactService } from 'src/app/services/contact.service';
-
+import { UserMsgService } from 'src/app/services/user-msg.service'; 
+import {Clipboard} from '@angular/cdk/clipboard';
 
 @Component({
     selector: 'contact-app',
@@ -13,6 +14,8 @@ export class ContactAppComponent implements OnInit, OnDestroy {
 
     constructor(
         private contactService: ContactService,
+        private userMsg: UserMsgService,
+        private clipboard: Clipboard
     ) { }
 
     contacts!: Contact[]
@@ -28,12 +31,15 @@ export class ContactAppComponent implements OnInit, OnDestroy {
 
     onRemoveContact(contactId: string) {
         this.contactService.deleteContact(contactId)
+        this.userMsg.setUserMsg(`Contact removed (${contactId})`)
         var audio = new Audio('assets/sounds/trash.mp3')
         audio.play()
     }
 
-    onSelectContactId(contactId: string) {
-        this.selectedContactId = contactId
+    onCopy(copy:string){
+        console.log(copy);
+        this.clipboard.copy(copy);
+        this.userMsg.setUserMsg(`Phone copied to clipboard`)
     }
 
     ngOnDestroy(): void {

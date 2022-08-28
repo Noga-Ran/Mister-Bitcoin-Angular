@@ -1,12 +1,14 @@
 <section class="contact-preview" [routerLink]="['/contacts', contact._id]">
     <section class="info">
+        <img src="assets/icons/contact.png" alt="">
         <section class="data">
             <p>{{contact.name}}</p>
+            <p>{{contact.phone}}</p>
         </section>
-        <img src="assets/icons/contact.png" alt="">
     </section>
     <section class="actions">
         <button (click)="onEditConatct($event,contact._id)" class="edit-btn"><img src="assets/icons/edit.png" alt=""></button>
         <button (click)="onRemoveContact($event)" class="remove-btn"><img src="assets/icons/delete.png" alt=""></button>
+        <button (click)="onCopyToCB($event)"><img src="assets/icons/copy.jpg" alt=""></button>
     </section>
 </section>
