@@ -1,12 +1,21 @@
 <section class="home-page-container app-regular-padding" *ngIf="user$">
-    <h2 class="decorate-h1">Hello {{getUser.name}}!</h2>
-    <span>
-        <img src="assets/icons/coins.png" alt="..">
-        <p>USD: {{getUser.coins/btc | currency}}</p>
-    </span>
-    <span>
-        <img src="assets/icons/bitcoin.png" alt="..">
-        <p>BTC: {{getUser.coins}}</p>
-    </span>
+    <h2 class="decorate-h1 b-border">Hello, {{getUser.name}}</h2>
+    <section class="currency-container">
+        <div>
+            <p class="ten-m-b">current balance</p>
+            <span>
+                <img src="assets/icons/bitcoin.png" alt="..">
+                <p>BTC: {{getUser.coins}}</p>
+            </span>
+            <span>
+                <img src="assets/icons/coins.png" alt="..">
+                <p>USD: {{getUser.coins/btc | currency}}</p>
+            </span>
+        </div>
+        <div>
+            <p class="flex ten-m-b">current btc usd <span class="live">live</span></p>
+            <p>{{getUser.coins/btc | currency :'USD':'symbol':'1.0-0'}}</p>
+        </div>
+    </section>
     <moves-list [moves]="getUser.moves"></moves-list>
 </section>
