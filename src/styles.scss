@@ -136,3 +136,7 @@ body { margin: 0; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Gra
 .flex-colum{
     flex-direction: column;
 }
+
+.white-filter-img{
+    filter: invert(96%) sepia(43%) saturate(6837%) hue-rotate(183deg) brightness(124%) contrast(92%);
+}

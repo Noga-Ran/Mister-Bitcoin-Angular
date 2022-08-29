@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1661776171612,
+  "timestamp": 1661797010629,
   "index": "/Mister-Bitcoin-Angular/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "/Mister-Bitcoin-Angular/favicon.ico",
         "/Mister-Bitcoin-Angular/index.html",
-        "/Mister-Bitcoin-Angular/main.c50ca54672c88240.js",
+        "/Mister-Bitcoin-Angular/main.917de0d7f50b89ef.js",
         "/Mister-Bitcoin-Angular/manifest.webmanifest",
         "/Mister-Bitcoin-Angular/polyfills.b4c19097b89a15c8.js",
         "/Mister-Bitcoin-Angular/runtime.52f93e2f952b465b.js",
-        "/Mister-Bitcoin-Angular/styles.cd3e8114fe401901.css"
+        "/Mister-Bitcoin-Angular/styles.9bb8e1010892ac11.css"
       ],
       "patterns": []
     },
@@ -90,12 +90,12 @@
     "/Mister-Bitcoin-Angular/assets/sounds/coins.mp3": "c405919a275c2673bdb2e7892887a2c836902f5b",
     "/Mister-Bitcoin-Angular/assets/sounds/trash.mp3": "211d61e7eeb0f5331a590a24c6774c76c30e2c3e",
     "/Mister-Bitcoin-Angular/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "/Mister-Bitcoin-Angular/index.html": "9a087cded5e54be90ae7a76723a351b069a5a477",
-    "/Mister-Bitcoin-Angular/main.c50ca54672c88240.js": "babb7e62c3a4593e6ac1307a0f47f69968844f5d",
+    "/Mister-Bitcoin-Angular/index.html": "7231a17e0aaeed2306814f182aaff495388cbc4e",
+    "/Mister-Bitcoin-Angular/main.917de0d7f50b89ef.js": "d4875d48680eb69198d0ed2f0520d2a276497e51",
     "/Mister-Bitcoin-Angular/manifest.webmanifest": "004456b139462f4491e8db0f6aaf14cc5a3cf496",
     "/Mister-Bitcoin-Angular/polyfills.b4c19097b89a15c8.js": "a661fdfedca3d04746f367b47339062a72096f72",
     "/Mister-Bitcoin-Angular/runtime.52f93e2f952b465b.js": "bf3ad376b07c3bf1dacbeb974c1afff52742e8f0",
-    "/Mister-Bitcoin-Angular/styles.cd3e8114fe401901.css": "b0556981503f53f64f83b3957d16fa94e3ad0def"
+    "/Mister-Bitcoin-Angular/styles.9bb8e1010892ac11.css": "7b1f2c263f56fc5aa4fb4d100f9719250a806488"
   },
   "navigationUrls": [
     {
