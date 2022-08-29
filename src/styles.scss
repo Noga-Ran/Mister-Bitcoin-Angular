@@ -122,3 +122,17 @@ body { margin: 0; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Gra
 [disabled]{
     cursor: not-allowed !important;
 }
+
+.b-border{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f098191f;
+}
+
+.flex{
+    display: flex;
+}
+
+.flex-colum{
+    flex-direction: column;
+}
