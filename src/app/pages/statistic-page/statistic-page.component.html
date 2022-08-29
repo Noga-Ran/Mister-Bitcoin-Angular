@@ -1,12 +1,12 @@
 <section class="charts-container app-regular-padding" [style.width]="chartWide" (window:resize)="onResize($event)">
     
-    <google-chart style="height: 300px;" [width]="chartWide" [title]="marketChart.title"
+    <google-chart *ngIf="marketChart.title === 'Market Price (USD)'" style="height: 300px;" [width]="chartWide" [title]="marketChart.title"
     [type]="marketPriceType" 
     [data]="marketChart.data" 
     [columns]="marketChart.columnNames"
     [options]="marketChart.options"></google-chart>
     
-    <google-chart style="height: 300px;" [width]="chartWide" [title]="transactionsChart.title"
+    <google-chart *ngIf="transactionsChart.title === 'Transactions'" style="height: 300px;" [width]="chartWide" [title]="transactionsChart.title"
     [type]="transactionsType" 
     [data]="transactionsChart.data" 
     [columns]="transactionsChart.columnNames"

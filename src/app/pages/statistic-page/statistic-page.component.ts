@@ -55,7 +55,7 @@ export class StatisticPageComponent implements OnInit {
     this.transactionsChart.options.titleTextStyle.color =  '#90ee90'
     this.transactionsChart.options.titleTextStyle.fontSize
     this.transactionsChart.title = 'Transactions';
-    console.log(this.transactionsChart);
+    // console.log(this.transactionsChart);
   }
 
   filterMarketData(res: any): void {
@@ -66,9 +66,8 @@ export class StatisticPageComponent implements OnInit {
     this.marketChart.options.colors = ['#add8e6']
     
     this.marketChart.options.titleTextStyle.color =  '#add8e6'
-    this.marketChart.title = res.name;
-
-    console.log(this.marketChart);
+    this.marketChart.title = 'Market Price (USD)'
+    // console.log(this.marketChart);
     
   }
 
