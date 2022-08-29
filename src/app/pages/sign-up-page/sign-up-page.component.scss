@@ -80,13 +80,16 @@
     cursor: pointer;    
     margin-top: 30px;
 
-
     img {
         width: 220px;
     }
 }
 
 .line-text {
+
+    button {
+        padding: 0 !important;
+    }
     margin: auto;
     background: none;
     border: none;
@@ -94,7 +97,7 @@
     $stroke-width: 110px * 0.05;
     position: relative;
     display: inline-block;
-    font-size: 90px;
+    font-size: 60px;
     font-weight: 800;
     text-transform: uppercase;
     font-style: italic;
@@ -111,3 +114,4 @@
         $x + $step * 3 $y + $step * 3 rgb(139 183 240),
         $x + $step * 4 $y + $step * 4 rgb(139 183 240),
 }
+

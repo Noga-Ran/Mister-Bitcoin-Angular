@@ -9,4 +9,15 @@
         background: none;
         border: none;
     }
+
+    input{
+        background-color: #151515;
+        border-color: whitesmoke ;
+        padding-left: 5px;
+        color: whitesmoke;
+    }
+
+    input::placeholder{
+        color: whitesmoke;
+    }
 }
