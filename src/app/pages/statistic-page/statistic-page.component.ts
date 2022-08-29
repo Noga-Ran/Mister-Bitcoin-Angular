@@ -26,6 +26,7 @@ export class StatisticPageComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     var transactions = await this.bitcoinService.load('transactions')
     var isNewData = false
+    
     if (transactions) isNewData = this.checkData(transactions.values[transactions.values.length - 1].x * 1000)
   
     if (!transactions || !isNewData) {
@@ -54,6 +55,7 @@ export class StatisticPageComponent implements OnInit {
     this.transactionsChart.options.titleTextStyle.color =  '#90ee90'
     this.transactionsChart.options.titleTextStyle.fontSize
     this.transactionsChart.title = 'Transactions';
+    console.log(this.transactionsChart);
   }
 
   filterMarketData(res: any): void {
@@ -62,10 +64,12 @@ export class StatisticPageComponent implements OnInit {
     this.marketChart.data = this._filterData(res)
     this.marketChart.columnNames = ['Month', 'Bitcoin value']
     this.marketChart.options.colors = ['#add8e6']
-    // hAxis: { textStyle: { color: '#151515' } },
-    //             vAxis: { textStyle: { color: '#151515' } },
+    
     this.marketChart.options.titleTextStyle.color =  '#add8e6'
     this.marketChart.title = res.name;
+
+    console.log(this.marketChart);
+    
   }
 
   _filterData(result: any) {
