@@ -161,6 +161,8 @@ export class ContactService {
 
     public getContactById(id: string): Observable<Contact> {
         //mock the server work
+        this.loadContacts({term:''})
+        
         const contact = this._contactsDb.find(contact => contact._id === id)
     
         //return an observable
@@ -176,6 +178,8 @@ export class ContactService {
     }
 
     public saveContact(contact: Contact) {
+        this.loadContacts({term:''})
+        
         return contact._id ? this._updateContact(contact) : this._addContact(contact)
     }
 

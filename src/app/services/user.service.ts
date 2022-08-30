@@ -6,7 +6,7 @@ import { Move } from '../models/move.model';
 import { Contact } from '../models/contact.model';
 
 const USER = [{
-    name: "Ochoa Hyde",
+    name: "Demi Userberg",
     coins: 1000,
     moves: []
 }]

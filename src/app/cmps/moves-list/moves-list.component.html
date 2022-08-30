@@ -1,4 +1,4 @@
-<section class="moves-container" *ngIf="moves.length">
+<section class="moves-container" *ngIf="movesToDisplay.length">
     <h1>{{headLine}}</h1>
     <ul *ngFor="let move of movesToDisplay">
         <li *ngIf="url==='home'">To: {{move.to}}</li>

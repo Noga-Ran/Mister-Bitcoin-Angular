@@ -12,6 +12,8 @@
             <p>{{contact.email}}</p>
         </section>
     </section>
+    <!-- <div>
+    </div> -->
     <transfer-fund [contactName]="contact.name" [maxCoins]="maxCoins" (onTransfer)="onTransfer($event)"></transfer-fund>
     <moves-list [moves]="moves" [contactId]="contact._id"></moves-list>
 </section>
